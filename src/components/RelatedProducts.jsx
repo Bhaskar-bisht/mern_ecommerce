@@ -7,6 +7,7 @@ import 'swiper/css';
 
 import { RiShoppingCart2Line } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { backend_url } from '../server';
 // import LATEST from '../assets/latest.js';
 
 
@@ -17,7 +18,7 @@ const RelatedProducts = () => {
 
 
     useEffect(() => {
-      fetch("http://localhost:8000/newcollections").then((res) => res.json()).then((data) => setNewCollection(data))
+      fetch(`${backend_url}/newcollections`).then((res) => res.json()).then((data) => setNewCollection(data))
     }, [])
   
 

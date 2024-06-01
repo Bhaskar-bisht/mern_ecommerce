@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { backend_url } from '../server.js'
 import Item from './Item.jsx'
 
 const PopulerProducts = () => {
@@ -6,7 +7,7 @@ const PopulerProducts = () => {
   const [populerProduct, setPopulerProduct] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:8000/populerproducts").then((res) => res.json()).then((data) => setPopulerProduct(data))
+    fetch(`${backend_url}/populerproducts`).then((res) => res.json()).then((data) => setPopulerProduct(data))
   }, [])
 
 

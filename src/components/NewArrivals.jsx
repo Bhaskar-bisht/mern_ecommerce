@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { backend_url } from '../server.js'
 import Item from './Item.jsx'
 
 function NewArrivals() {
@@ -7,7 +8,7 @@ function NewArrivals() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/newcollections").then((res) => res.json()).then((data) => setNewCollection(data))
+    fetch(`${backend_url}/newcollections`).then((res) => res.json()).then((data) => setNewCollection(data))
   }, [])
 
   return (

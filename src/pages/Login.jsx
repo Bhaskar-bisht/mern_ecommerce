@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { backend_url } from "../server";
 
 const Login = () => {
   const [state, setState] = useState("login");
@@ -15,7 +16,7 @@ const Login = () => {
   const login = async() => {
     // console.log("login exicute", formData);
     let responseData;
-    await fetch("http://localhost:8000/login", {
+    await fetch(`${backend_url}/login`, {
       method: "POST",
       headers: {
         Accept: 'application/formData',
@@ -35,7 +36,7 @@ z
   const signup = async() => {
     // console.log("signup exicute", formData);
     let responseData;
-    await fetch("http://localhost:8000/signup", {
+    await fetch(`${backend_url}/signup`, {
       method: "POST",
       headers: {
         Accept: 'application/formData',

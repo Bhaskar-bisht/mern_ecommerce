@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { backend_url } from "../../server";
 import styles from "./styles.module.css";
 
 const Signup = () => {
@@ -20,7 +21,7 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8000/user";
+			const url = `${backend_url}/user`;
 			const { data: res } = await axios.post(url, data);
 			navigate("/login");
 			console.log(res.message);
